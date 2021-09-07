@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dotnut - gym</title>
+    <link rel="shortcut icon" href="image/nav//nav_img.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&family=Roboto:wght@100&display=swap");   
+        .nav_img{
+            width: 90px;
+            height: 60px;
+        }
+        .slider_div{
+            width: 100%;
+            height: 600px;
+        }
+        @media screen and (max-width:568px) {
+            .slider_div{
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="p-0">
+    <header class="p-0">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <div class="container-fluid p-0">
+                <a class="navbar-brand" href="#">
+                    <img class="rounded-circle nav_img" src="image/nav/nav_img.png" alt="Dotnut Gym">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end container-fluid">
+                        <li class="nav-item px-3">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item px-3">
+                        <a class="nav-link" href="#">About us</a>
+                        </li>
+                        <li class="nav-item px-3">
+                        <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item px-3">
+                        <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- carousel section -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner position-relative">
+                <div class="carousel-item active slider_div">
+                    <img src="image/carousel/carousel_1.jpg" class="d-block w-100 h-100" alt="slider image">
+                </div>
+                <div class="carousel-item slider_div">
+                    <img src="image/carousel/carousel_2.jpg" class="d-block w-100 h-100" alt="slider image">
+                </div>
+                <div class="carousel-item slider_div">
+                    <img src="image/carousel/carousel_3.jpg" class="d-block w-100 h-100" alt="slider image">
+                </div>
+                <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                <div class="position-absolute top-50 start-50 translate-middle text-light text-center">
+                    <h2 class="">DOTNUT GYM CENTER</h2>
+                    <p class="my-4">building a perfect body</p>
+                    <div class="container text-center">
+                        <button class="btn btn-light">Register now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- register form section -->
+    <form class="row g-0 p-5 justify-content-between">
+        <h2 class="py-2 text-center">Register with us</h2>
+        <div class="col-md-6 mb-4">
+          <h5><label for="inputEmail4" class="form-label">Email</label></h5>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6 mb-4">
+          <h5><label for="inputPassword4" class="form-label">Password</label></h5>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12 mb-4">
+          <h5><label for="inputAddress" class="form-label">Address</label></h5>
+          <!-- <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
+          <textarea class="form-control" id="inputAddress" name="inputAddress"></textarea>
+        </div>
+        <div class="col-md-6 mb-4">
+          <h5><label for="inputCity" class="form-label">City</label></h5>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5><label for="inputState" class="form-label">State</label></h5>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5><label for="inputZip" class="form-label">Zip</label></h5>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="contanier-fluid col-md-12 mb-4">
+            <h5>Gender</h5>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">Others</label>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <h5><label for="inputState" class="form-label">Age</label></h5>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+              <option>...</option>
+              <option>...</option>
+            </select>
+          </div>
+        <div class="col-12 mb-4">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        <div class="col-12">
+          <button type="reset" class="btn btn-warning">Clear</button>
+        </div>
+    </form>
+
+    <!-- footer section -->
+    <footer class="m-0">
+        <p class="text-end bg-dark text-light p-2 m-0">&copy; - Dotnut 2021 (+234 706 548 6712)</p>
+    </footer>
+</body>
+</html>
