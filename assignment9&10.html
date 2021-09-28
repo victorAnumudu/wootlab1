@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container p-0">
+        <h1 class="text-center">Circle (Area - Circumference)</h1>
+        <p id="error-radius" style="color: red;"></p>
+        <div class="number">
+            <label class="d-block" for="radius">Enter any Radius</label>
+            <input class="container-fluid" type="text" name="radius" id="radius">
+        </div>
+        <div class="text-center">
+            <div class="range my-2">
+                <input type="radio" name="radius" id="area"> Area
+                <input type="radio" name="radius" id="circumference"> Circumference
+            </div>
+            <button class="btn btn-danger" id="calculate">Calculate</button>
+        </div>
+        <div class="text-center mt-2">
+            <h1 class="">Output</h1>
+            <p class="" id="circle_result"></p>
+        </div>
+    </div>
+
+    <div class="container p-0 my-5">
+        <h1 class="text-center">Prime Checker</h1>
+        <p id="prime_error" style="color: red;"></p>
+        <div class="number">
+            <label class="d-block" for="prime">Enter any Number</label>
+            <input class="container-fluid" type="text" name="prime" id="prime">
+        </div>
+        <div class="text-center my-3">
+            <button class="btn btn-danger" id="check">Check</button>
+        </div>
+        <div class="text-center mt-2">
+            <h1 class="">Output</h1>
+            <p class="" id="prime_result"></p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+       function calculate () {
+           let radius = Number(document.getElementById("radius").value);
+           if(isNaN(radius) || radius == "" || prime <= 0) {
+               document.getElementById("error-radius").innerHTML = "Please input a positive number";
+               document.getElementById("radius").value = "";
+            } else {
+                let area = document.getElementById("area").checked;
+                let circumference = document.getElementById("circumference").checked;
+                if(area) {
+                    let area = Math.PI * Math.pow(radius, 2);
+                    document.getElementById("circle_result").innerHTML = area;
+                } else if(circumference) {
+                    let area = 2 * Math.PI * radius;
+                    document.getElementById("circle_result").innerHTML = area;
+                } else {
+                    document.getElementById("error-radius").innerHTML = "Please select area or circumference";
+                }
+                document.getElementById("error-radius").innerHTML = "";
+           }
+       }
+       document.getElementById("calculate").addEventListener("click", calculate)
+
+       function check () {
+           let prime = Number(document.getElementById("prime").value);
+           let divisibleNumber = [];
+           if(isNaN(prime) || prime == "" || prime <= 0) {
+               document.getElementById("prime_error").innerHTML = "Please input a positive number";
+               document.getElementById("prime").value = "";
+               return;
+           } else {
+               for(i = 1; i <= prime; i++) {
+                   if(prime % i == 0) {
+                        divisibleNumber.push(i)
+                   }
+               }
+               
+               if(divisibleNumber.length > 2 || divisibleNumber.length < 2) {
+                   document.getElementById("prime_result").innerHTML = `${prime} is not prime number`
+                } else {
+                    document.getElementById("prime_result").innerHTML = `${prime} is prime number`
+               }
+               document.getElementById("prime_error").innerHTML = "";
+           }
+       }
+       document.getElementById("check").addEventListener("click", check)
+    </script>
+</body>
+</html>
